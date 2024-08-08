@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.28)
 project(fastRPC)
 
-set(CMAKE_CXX_STANDARD 11)
+set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -g -Wall -pthread")
 
 include_directories(
@@ -10,7 +10,10 @@ include_directories(
 
 set(SRC libcoroutine/coroutine.cpp
         libcoroutine/thread.cpp
-        libcoroutine/scheduler.cpp)
+        libcoroutine/scheduler.cpp
+        libcoroutine/ioscheduler.cpp
+        libcoroutine/timer.cpp
+)
 
 add_library(fastRPC SHARED ${SRC})
 
